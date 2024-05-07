@@ -1,0 +1,26 @@
+First:
+podman run -d -it --rm ubuntu:latest sh -c 'while true; do echo "input website:"; read website; echo "searching.."; sleep 1; curl http://$website; done'
+podman exec -it 9a bash
+
+In container:
+root@9a3a6629d268:/# apt update && apt upgrade
+root@9a3a6629d268:/# apt install curl
+
+On terminal:
+podman attach 9a
+
+input website:
+helsinki.fi
+searching..
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.22.1</center>
+</body>
+</html>
+input website:
+
+Other possible option:
+podman run -it --rm ubuntu:latest sh -c 'apt-get update -y && apt-get upgrade -y; apt install curl -y; while true; do echo "input website:"; read website; echo "searching.."; sleep 1; curl http://$website; done'
+
