@@ -1,0 +1,16 @@
+The size is significally different:
+
+REPOSITORY                                   TAG         IMAGE ID      CREATED      SIZE
+docker.io/devopsdockeruh/simple-web-service  ubuntu      4e3362e907d5  3 years ago  85.4 MB
+docker.io/devopsdockeruh/simple-web-service  alpine      fd312adc88e0  3 years ago  16 MB
+
+The message is the same:
+podman exec -it 97 sh
+/usr/src/app # tail -f text.log 
+2024-05-11 15:31:33 +0000 UTC
+2024-05-11 15:31:35 +0000 UTC
+2024-05-11 15:31:37 +0000 UTC
+2024-05-11 15:31:39 +0000 UTC
+2024-05-11 15:31:41 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
